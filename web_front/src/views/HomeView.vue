@@ -1,15 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <ContentView>
+  </ContentView>
 </template>
 
 <script>
-// @ is an alias to /src
+import ContentView from "../components/Content.vue";
 
 export default {
   name: 'HomeView',
   components: {
+    ContentView,
   }
 }
 </script>
+
+
+<style scoped>
+.container{
+  margin-top: 20px;
+}
+</style>
