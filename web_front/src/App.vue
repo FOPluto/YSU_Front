@@ -1,6 +1,6 @@
 <template>
-  <NarBar/>
-  <router-view/>
+  <NarBar />
+  <router-view />
 </template>
 
 <script>
@@ -8,11 +8,11 @@ import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
 import NarBar from "./components/NarBar.vue";
 
-export default{
+export default {
   name: "App",
   components: {
     NarBar: NarBar
-    
+
   }
 }
 </script>

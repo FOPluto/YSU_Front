@@ -1,3 +1,7 @@
+<!--
+ * @FileDescription:该文件为Home目录的页面文件
+ * @Author: FoPluto
+-->
 <template>
   <ContentView>
   </ContentView>
@@ -16,7 +20,7 @@ export default {
 
 
 <style scoped>
-.container{
+.container {
   margin-top: 20px;
 }
 </style>

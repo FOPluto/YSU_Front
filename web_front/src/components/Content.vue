@@ -3,17 +3,16 @@
  * @Author: FoPluto
 -->
 
-
 <template>
-<div class="home">
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
+    <div class="home">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -24,7 +23,7 @@ export default {
 
 
 <style scoped>
-.container{
+.container {
     margin-top: 18px;
 }
 </style>
