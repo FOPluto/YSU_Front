@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
 .container {
-    margin-top: 18px;
+    margin-top: 69px;
 }
 </style>
