@@ -10,8 +10,6 @@
       <div class="card">
         <div class="card-body">
           <UpLoad />
-          <!-- 预览文件的地方（用于渲染） -->
-          <div ref="file"></div>
         </div>
       </div>
     </div>
@@ -26,6 +24,7 @@ import UpLoad from "../components/UpLoad.vue";
 // import mammoth from "mammoth";
 
 export default {
+
   // data() {
   //   return {
   //     htmlContent: ""

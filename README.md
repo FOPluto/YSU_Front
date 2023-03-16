@@ -10,6 +10,7 @@ mammoth.js: 用于读取word文档
 docx-preview: 用于预览文档
 docx:
 path-browserify:
+jquery: 用于动态页面设计
 在控制台下跑如下代码：
 
 ```
@@ -36,3 +37,5 @@ npm i path-browserify
 ```
 
 这样操作之后就可以正常编译了
+
+### 代码更新到3.16，先看看后端做的咋样了，好像之后的业务最好跟后端一起
