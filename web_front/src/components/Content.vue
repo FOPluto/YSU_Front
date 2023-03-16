@@ -4,26 +4,18 @@
 -->
 
 <template>
-    <div class="home">
-        <div class="container">
-            <div class="card">
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div>
-    </div>
+    <NarBar />
 </template>
 
 <script>
+import NarBar from './NarBar.vue';
 export default {
     name: 'ContentView',
+    components: {
+        NarBar
+    }
 }
 </script>
 
 
-<style scoped>
-.container {
-    margin-top: 69px;
-}
-</style>
+<style scoped></style>
