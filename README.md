@@ -11,7 +11,8 @@ docx-preview: 用于预览文档
 docx:
 path-browserify:
 jquery: 用于动态页面设计
-在控制台下跑如下代码：
+element UI：用于预览功能设计
+在控制台下跑如下代码，即可实现安装：
 
 ```
 npm install mammoth docx --save

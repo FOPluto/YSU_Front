@@ -1,16 +1,23 @@
 <template>
-    <div>
-        <label for="formFileLg" class="form-label">请选择输入文件</label>
+    <div class="UpLoad">
+        <label for="formFileLg" id="form-label" class="form-label" name="UpLoad">请选择输入文件</label>
         <!-- 输入文件doc或者dot过些天看看docx可以不 -->
-        <input class="form-control form-control-lg" id="formFileLg" type="file" accept="application/msword" />
+        <input class="form-control form-control-lg" id="formFileLg" @change="handleFileChange" type="file" accept="application/msword" />
         <!-- 预览文件的地方（用于渲染） -->
-        <div ref="file" id="file_info_div">
+        <div id="wordView" v-html="vHtml">
         </div>
     </div>
 </template>
 
 <script>
-import mammoth from "mammoth";
+import JSZip from 'jszip';
+import Docxtemplater from 'docxtemplater';
+
+// const reader = new FileReader();
+
+
+
+console.log("start");
 
 export default {
     data() {
@@ -20,19 +27,20 @@ export default {
     },
     methods: {
         handleFileChange(event) {
-            const file = event.target.files[0];
-            console.log("aaaa");
-            if (!file) {
+            const reader = new FileReader()
+            reader.readAsArrayBuffer(event.target.files[0]);
+            if (!reader) {
                 return;
             }
-            let box = document.getElementById("file_info_div");
-            // 通过 mammoth 将 Word 文档转换为 HTML 格式
-            mammoth.convertToHtml({ arrayBuffer: file }).then(result => {
-                const html = result.value;
-                this.htmlContent = html;
-                console.log(this.htmlContent);
-            });
-            box.html = this.htmlContent;
+            console.log("reader: " + reader);
+            reader.onload = (e) => {
+                const arrayBuffer = e.target.result
+                const zip = new JSZip(arrayBuffer)
+                const doc = new Docxtemplater().loadZip(zip)
+                const text = doc.getFullText()
+                console.log(text)
+            }
+            reader.readAsArrayBuffer(reader)
         }
     },
     name: "UpLoad"
