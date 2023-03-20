@@ -10,12 +10,8 @@
 </template>
 
 <script>
-import JSZip from 'jszip';
-import Docxtemplater from 'docxtemplater';
-
-// const reader = new FileReader();
-
-
+import { result } from 'lodash';
+import mammoth from 'mammoth';
 
 console.log("start");
 
@@ -27,20 +23,13 @@ export default {
     },
     methods: {
         handleFileChange(event) {
-            const reader = new FileReader()
-            reader.readAsArrayBuffer(event.target.files[0]);
-            if (!reader) {
-                return;
-            }
-            console.log("reader: " + reader);
-            reader.onload = (e) => {
-                const arrayBuffer = e.target.result
-                const zip = new JSZip(arrayBuffer)
-                const doc = new Docxtemplater().loadZip(zip)
-                const text = doc.getFullText()
-                console.log(text)
-            }
-            reader.readAsArrayBuffer(reader)
+            var e = window.event || event;
+            console.log(e.target.files[0]);
+            let word_view = document.getElementById("wordView");
+            mammoth.convertToHtml(e.target.files[0], result => {
+                console.log(result);
+                word_view.vHtml = result;
+            })
         }
     },
     name: "UpLoad"
