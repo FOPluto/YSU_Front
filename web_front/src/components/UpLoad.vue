@@ -10,14 +10,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-import { result } from 'lodash';
 import mammoth from 'mammoth';
-=======
-import mammoth from "mammoth";
 import axios from "axios";
 import { Buffer } from 'buffer';
->>>>>>> f1daa1e65e2fe0d61189d4ba4c3b19c7710d5d9a
 
 console.log("start");
 
@@ -34,7 +29,7 @@ export default {
 
         displayResult(result) {
             let html = result.value;
-			console.log(html)
+            console.log(html)
             let newHTML = html.replace(//g, '')
             console.log(newHTML)
         },
@@ -58,16 +53,13 @@ export default {
         },
 
         handleFileChange(event) {
-<<<<<<< HEAD
             var e = window.event || event;
             console.log(e.target.files[0]);
             let word_view = document.getElementById("wordView");
             mammoth.convertToHtml(e.target.files[0], result => {
                 console.log(result);
                 word_view.vHtml = result;
-            })
-        }
-=======
+            });
             console.log(event);
             let file = event.target.files[0];
             if (!file) {
@@ -95,7 +87,6 @@ export default {
             // 将 HTML 内容发送给后端
             axios.post("/api/upload", { html: this.htmlContent });
         },
->>>>>>> f1daa1e65e2fe0d61189d4ba4c3b19c7710d5d9a
     },
     name: "UpLoad",
 };
