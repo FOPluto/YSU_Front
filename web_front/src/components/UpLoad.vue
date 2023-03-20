@@ -10,39 +10,74 @@
 </template>
 
 <script>
-import JSZip from 'jszip';
-import Docxtemplater from 'docxtemplater';
-
-// const reader = new FileReader();
-
-
+import mammoth from "mammoth";
+import axios from "axios";
+import { Buffer } from 'buffer';
 
 console.log("start");
 
 export default {
     data() {
         return {
-            htmlContent: ""
+            vHtml: "",
         };
     },
     methods: {
+
+        displayResult(result) {
+            let html = result.value;
+			console.log(html)
+            let newHTML = html.replace(//g, '')
+            console.log(newHTML)
+        },
+
+        toBuffer(ab) {
+            var buf = new Buffer(ab.byteLength);
+            var view = new Uint8Array(ab);
+            for (var i = 0; i < buf.length; ++i) {
+                buf[i] = view[i];
+            }
+            return buf;
+        },
+
+        toArrayBuffer(buf) {
+            var ab = new ArrayBuffer(buf.length);
+            var view = new Uint8Array(ab);
+            for (var i = 0; i < buf.length; ++i) {
+                view[i] = buf[i];
+            }
+            return ab;
+        },
+
         handleFileChange(event) {
-            const reader = new FileReader()
-            reader.readAsArrayBuffer(event.target.files[0]);
-            if (!reader) {
+            console.log(event);
+            let file = event.target.files[0];
+            if (!file) {
                 return;
             }
-            console.log("reader: " + reader);
-            reader.onload = (e) => {
-                const arrayBuffer = e.target.result
-                const zip = new JSZip(arrayBuffer)
-                const doc = new Docxtemplater().loadZip(zip)
-                const text = doc.getFullText()
-                console.log(text)
-            }
-            reader.readAsArrayBuffer(reader)
-        }
+            let reader = new FileReader();
+
+            reader.onload = function (loadEvent) {
+                // 修改后的写法
+                let arrayBuffer = loadEvent.target.result;
+                // let buffer = to_buffer(arrayBuffer);
+                console.log(arrayBuffer);
+                // 通过 mammoth 将 Word 文档转换为 HTML 格式                const length = response.data.content.data.length
+
+                mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+                    .then(this.displayResult)
+                    .done();
+            };
+            // console.log(file);
+            // console.log("");
+            // console.log(reader);
+            reader.readAsArrayBuffer(file);
+        },
+        sendToBackend() {
+            // 将 HTML 内容发送给后端
+            axios.post("/api/upload", { html: this.htmlContent });
+        },
     },
-    name: "UpLoad"
+    name: "UpLoad",
 };
 </script>
