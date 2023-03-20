@@ -24,31 +24,6 @@ import UpLoad from "../components/UpLoad.vue";
 // import mammoth from "mammoth";
 
 export default {
-
-  // data() {
-  //   return {
-  //     htmlContent: ""
-  //   }
-  // },
-
-  // methods: {
-  //   handleFileChange(event) {
-  //     const file = event.target.files[0];
-  //     if (!file) {
-  //       return;
-  //     }
-
-  //     // 通过 mammoth 将 Word 文档转换为 HTML 格式
-  //     mammoth.convertToHtml({ arrayBuffer: file }).then(result => {
-  //       const html = result.value;
-  //       this.htmlContent = html;
-  //     });
-  //   },
-  //   sendToBackend() {
-  //     // 将 HTML 内容发送给后端
-  //     axios.post("/api/upload", { html: this.htmlContent });
-  //   }
-  // },
   name: 'HomeView',
   components: {
     ContentView,
