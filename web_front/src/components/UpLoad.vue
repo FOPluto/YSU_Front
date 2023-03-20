@@ -16,6 +16,9 @@ import { Buffer } from 'buffer';
 
 console.log("start");
 
+// @ts-ignore
+window.Buffer = Buffer;
+
 export default {
     data() {
         return {

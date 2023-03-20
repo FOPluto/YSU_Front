@@ -5,8 +5,8 @@ module.exports = defineConfig({
     resolve: {
       fallback: {
         path: require.resolve('path-browserify'),
-        "stream": require.resolve("stream-browserify"),
-        "Buffer": require.resolve("buffer"),
+        stream: require.resolve("stream-browserify"),
+        buffer: require.resolve("buffer"),
       },
     },
   },
