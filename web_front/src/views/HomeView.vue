@@ -37,13 +37,25 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 79px;
-  max-width: 90%;
-  height: 100%;
+  padding-top: 79px;
+  padding-bottom: 40px;
+  max-width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: auto;
+  background-size: 100%;
+  position: relative;
 }
 
+
 .home {
+  background-image: url("../assets/preview.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 }
 </style>

@@ -7,12 +7,12 @@
         <!-- 来一个card装起来 -->
         <div class="container" id="input-word-imshow">
             <div class="card" id="input-word-imshow-card">
-                <div id="wordView" v-html="wordText" ></div>
+                <div id="wordView" v-html="wordText"></div>
             </div>
         </div>
         <div class="container" id="input-word-imshow">
             <div class="card" id="input-word-imshow-card">
-                <div id="resultView" v-html="resultWordText" ></div>
+                <div id="resultView" v-html="resultWordText"></div>
             </div>
         </div>
     </div>
@@ -104,10 +104,16 @@ export default {
 #input-word-imshow {
     margin-top: 2%;
     min-height: 1%;
+    height: 100%;
+}
+
+.card-body {
+    height: 100%;
 }
 
 #input-word-imshow-card {
     padding: 3% 4% 3% 4%;
     min-height: 20%;
+    height: 100%;
 }
 </style>
