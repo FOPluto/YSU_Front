@@ -19,6 +19,7 @@
     "docx-preview": "^0.1.15",
     "docxtemplater": "^3.35.0",
     "element-ui": "^2.15.13",
+    "graceful-fs": "^4.2.11",
     "jquery": "^3.6.4",
     "jszip": "^3.10.1",
     "mammoth": "^1.5.1",
