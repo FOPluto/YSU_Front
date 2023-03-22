@@ -19,14 +19,12 @@
 </template>
 
 <script>
-import mammoth from 'mammoth';
-import { Buffer } from 'buffer';
+import mammoth from 'mammoth';       // 引入mammoth包
+import { Buffer } from 'buffer';     // 引入Buffer
 
-var axios = require('axios');
-var FormData = require('form-data');
-var data = new FormData();
-// debug
-console.log("start");
+var axios = require('axios');        // 引入axios包  
+var FormData = require('form-data'); //
+var data = new FormData();           // 
 
 // @ts-ignore
 window.Buffer = Buffer;
@@ -34,15 +32,16 @@ window.Buffer = Buffer;
 export default {
     data() {
         return {
-            vHtml: "",             // 展示字符串
-            wordText: "",          // 用户输入文档的结果，也需要转换成html
-            resultWordText: "",    // 结果的展示，需要先转换成html
+            vHtml: "",               // 展示字符串
+            wordText: "",            // 用户输入文档的结果，也需要转换成html
+            resultWordText: "",      // 结果的展示，需要先转换成html
         };
     },
     methods: {
 
         displayResult(result) {
             console.log(result.value);
+            this.wordText = "";
             this.wordText = result.value;
         },
 
