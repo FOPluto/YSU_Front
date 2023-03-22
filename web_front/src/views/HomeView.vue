@@ -7,7 +7,7 @@
   </ContentView>
   <div class="home">
     <div class="container">
-      <div class="card">
+      <div class="card" id="container-card">
         <div class="card-body">
           <UpLoad />
         </div>
@@ -28,7 +28,7 @@ export default {
   components: {
     ContentView,
     UpLoad,
-  }
+  },
 }
 
 
@@ -37,6 +37,13 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 69px;
+  margin-top: 79px;
+  max-width: 90%;
+  height: 100%;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
 }
 </style>

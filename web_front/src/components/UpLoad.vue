@@ -1,10 +1,20 @@
 <template>
     <div class="UpLoad">
-        <label for="formFileLg" id="form-label" class="form-label" name="UpLoad">请选择输入文件</label>
+        <label for="formFileLg" id="form-label" class="form-label" name="UpLoad">文件上传</label>
         <!-- 输入文件doc或者dot过些天看看docx可以不 -->
-        <input class="form-control form-control-lg" id="formFileLg" @change="changeFile" type="file" accept="application/msword" />
+        <input class="form-control form-control-lg" id="formFileLg" @change="changeFile" type="file" accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
         <!-- 预览文件的地方（用于渲染） -->
-        <div id="wordView" v-html="wordText" />
+        <!-- 来一个card装起来 -->
+        <div class="container" id="input-word-imshow">
+            <div class="card" id="input-word-imshow-card">
+                <div id="wordView" v-html="wordText" ></div>
+            </div>
+        </div>
+        <div class="container" id="input-word-imshow">
+            <div class="card" id="input-word-imshow-card">
+                <div id="resultView" v-html="resultWordText" ></div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -15,25 +25,24 @@ import { Buffer } from 'buffer';
 var axios = require('axios');
 var FormData = require('form-data');
 var data = new FormData();
-
+// debug
 console.log("start");
 
 // @ts-ignore
 window.Buffer = Buffer;
 
-let word_view = document.getElementById("wordView");
-console.log("label:" + word_view);
-
 export default {
     data() {
         return {
-            vHtml: "",
-
+            vHtml: "",             // 展示字符串
+            wordText: "",          // 用户输入文档的结果，也需要转换成html
+            resultWordText: "",    // 结果的展示，需要先转换成html
         };
     },
     methods: {
 
         displayResult(result) {
+            console.log(result.value);
             this.wordText = result.value;
         },
 
@@ -90,3 +99,15 @@ export default {
     name: "UpLoad",
 };
 </script>
+
+<style>
+#input-word-imshow {
+    margin-top: 2%;
+    min-height: 1%;
+}
+
+#input-word-imshow-card {
+    padding: 3% 4% 3% 4%;
+    min-height: 20%;
+}
+</style>

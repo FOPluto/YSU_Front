@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">标注工具</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">登录/注册</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 帮助
