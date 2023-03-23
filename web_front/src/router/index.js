@@ -29,6 +29,11 @@ const routes = [
     path: '/upload',
     name: 'upload',
     component: () => import(/* webpackChunkName: "about" */ '../views/UpLoadView.vue')
+  },
+  { 
+    path: '/404', // 404未找到
+    name: '404',
+    component: () => import(/* webpackChunkName: "about" */ '../views/UpLoadView.vue')
   }
 ]
 

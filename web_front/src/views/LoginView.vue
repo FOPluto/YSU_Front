@@ -4,8 +4,7 @@
     <div class="home">
         <div class="container">
             <div class="card" id="container-card">
-                <div class="card-body">
-                </div>
+
             </div>
         </div>
     </div>
@@ -26,16 +25,19 @@ export default {
 
 <style scoped>
 .container {
-    padding-top: 79px;
-    padding-bottom: 40px;
+    padding-top: 8%;
+    padding-bottom: 5%;
     max-width: 100%;
     padding-left: 5%;
     padding-right: 5%;
-    height: auto;
+    height: 100%;
     background-size: 100%;
     position: relative;
 }
 
+#container-card {
+    height: 100%;
+}
 
 .home {
     background-image: url("../assets/preview.jpg");
