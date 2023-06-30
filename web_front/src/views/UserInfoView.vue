@@ -3,20 +3,23 @@
     </ContentView>
     <div class="home">
         <div class="container">
-            <LoginCard></LoginCard>
+            <div class="card" id="container-card">
+                <div class="card-body">
+                    <!-- 这里编写代码 -->
+
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import ContentView from "../components/Content.vue";
-import LoginCard from "@/components/LoginCard.vue";
 
 export default {
-    name: 'LoginView',
+    name: 'HomeView',
     components: {
         ContentView,
-        LoginCard
     },
 }
 
@@ -25,19 +28,16 @@ export default {
 
 <style scoped>
 .container {
-    padding-top: 11%;
-    padding-bottom: 8%;
+    padding-top: 79px;
+    padding-bottom: 40px;
     max-width: 100%;
-    padding-left: 26%;
-    padding-right: 26%;
-    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: auto;
     background-size: 100%;
     position: relative;
 }
 
-#container-card {
-    height: 100%;
-}
 
 .home {
     background-image: url("../assets/preview.jpg");

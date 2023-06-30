@@ -9,7 +9,7 @@
     <div class="container">
       <div class="card" id="container-card">
         <div class="card-body">
-          <UpLoad />
+
         </div>
       </div>
     </div>
@@ -18,13 +18,11 @@
 
 <script>
 import ContentView from "../components/Content.vue";
-import UpLoad from "../components/UpLoad.vue";
 
 export default {
   name: 'UpLoadView',
   components: {
     ContentView,
-    UpLoad,
   },
 }
 
